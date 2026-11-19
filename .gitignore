@@ -1,0 +1,17 @@
+# Generated files and OS/editor artifacts; previews are maintained explicitly.
+/build/
+.DS_Store
+*.aux
+*.log
+*.nav
+*.out
+*.snm
+*.toc
+*.synctex.gz
+*.fls
+*.fdb_latexmk
+*.xdv
+*.bbl
+*.blg
+*.bcf
+*.run.xml

@@ -1,0 +1,57 @@
+\NeedsTeXFormat{LaTeX2e}
+\ProvidesPackage{beamerthemeCityUDG}[2026/11/19 CityU DG theme]
+% 2026-11-19: Colors follow the supplied CityU DG logo; preserve its aspect ratio.
+\usetheme{CambridgeUS}
+\useinnertheme{rectangles}
+\definecolor{DGRed}{HTML}{CF003D}
+\definecolor{DGBurgundy}{HTML}{A6093D}
+\definecolor{DGOrange}{HTML}{E66628}
+\definecolor{DGInk}{HTML}{302A30}
+\definecolor{DGPale}{HTML}{FCF2F4}
+\setbeamercolor{normal text}{fg=DGInk,bg=white}
+\setbeamercolor{structure}{fg=DGBurgundy}
+\setbeamercolor{palette primary}{fg=white,bg=DGRed}
+\setbeamercolor{palette secondary}{fg=white,bg=DGBurgundy}
+\setbeamercolor{palette tertiary}{fg=white,bg=DGBurgundy}
+\setbeamercolor{title}{fg=white,bg=DGBurgundy}
+\setbeamercolor{subtitle}{fg=white}
+\setbeamercolor{frametitle}{fg=DGBurgundy,bg=white}
+\setbeamercolor{section in toc}{fg=DGBurgundy}
+\setbeamercolor{item}{fg=DGRed}
+\setbeamercolor{caption name}{fg=DGBurgundy}
+\setbeamercolor{alerted text}{fg=DGOrange}
+\setbeamercolor{block title}{fg=white,bg=DGBurgundy}
+\setbeamercolor{block body}{fg=DGInk,bg=DGPale}
+\setbeamercolor{block title alerted}{fg=white,bg=DGOrange}
+\setbeamercolor{block body alerted}{fg=DGInk,bg=DGOrange!8!white}
+\setbeamercolor{block title example}{fg=white,bg=DGRed}
+\setbeamercolor{block body example}{fg=DGInk,bg=DGPale}
+\setbeamercolor{headfoot}{fg=DGBurgundy,bg=white}
+\setbeamertemplate{navigation symbols}{}
+\setbeamertemplate{blocks}[default]
+\setbeamersize{text margin left=0.7cm,text margin right=0.7cm}
+\newcommand{\DGLogo}[1]{\includegraphics[height=#1]{figures/logo-sm.png}}
+% Running furniture: section, original logo, metadata and slide count.
+\setbeamertemplate{headline}{%
+\begin{beamercolorbox}[wd=\paperwidth,ht=0.72cm,dp=0.12cm]{headfoot}
+\hspace*{0.7cm}\raisebox{0.12cm}{\scriptsize\insertsectionhead}\hfill\DGLogo{0.55cm}\hspace*{0.5cm}
+\end{beamercolorbox}%
+{\color{DGOrange}\hrule height 0.6pt}}
+\setbeamertemplate{footline}{%
+{\color{DGBurgundy}\hrule height 0.6pt}%
+\begin{beamercolorbox}[wd=\paperwidth,ht=0.32cm,dp=0.15cm]{headfoot}
+\hspace*{0.5cm}\scriptsize\insertshortauthor\quad|\quad\insertshorttitle\hfill\insertframenumber\,/\,\inserttotalframenumber\hspace*{0.5cm}
+\end{beamercolorbox}}
+% Cover: full-color logo on white, orange rule and burgundy title panel.
+\setbeamertemplate{title page}{%
+\vbox{}\vfill
+\DGLogo{1.45cm}\par\vskip0.55cm
+{\color{DGOrange}\hrule height 2pt}%
+\begin{beamercolorbox}[sep=0.4cm,wd=\textwidth]{title}
+{\usebeamerfont{title}\inserttitle\par}
+\ifx\insertsubtitle\empty\else\vskip0.18cm{\usebeamerfont{subtitle}\insertsubtitle\par}\fi
+\end{beamercolorbox}
+\vskip0.4cm
+{\usebeamerfont{author}\insertauthor\par}\vskip0.12cm
+{\usebeamerfont{institute}\insertinstitute\par}\vskip0.12cm
+{\usebeamerfont{date}\insertdate\par}\vfill}
